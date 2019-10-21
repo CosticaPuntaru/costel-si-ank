@@ -1,6 +1,6 @@
 # PROMISE!
 
-**Costel** si **Ank** decid sa isi uneasca destinele
+**Gigel** si **Ank** decid sa isi uneasca destinele
 
 ```javascript
 function iiDeclarSotSiSotie(sot, sotie){
@@ -17,16 +17,16 @@ function iiDeclarSotSiSotie(sot, sotie){
 }
 ```
 ---------
-- .resolve - Atunci cand Ank doreste ceva, Costel trebuie sa se conformeze imediat.
+- .resolve - Atunci cand Ank doreste ceva, Gigel trebuie sa se conformeze imediat.
 
 ```javascript
-function costeleVreau(numeProdus){
+function GigeleVreau(numeProdus){
 	return Promise.resolve(new Produs(numeProdus));
 }
 ```
 ---------
 
-- ``.reject`` - Costel, seara, se apropie de ank, acesta incercand sa o giugiuleasca
+- ``.reject`` - Gigel, seara, se apropie de ank, acesta incercand sa o giugiuleasca
 
 ```javascript
 function gigiuleala(data, temperatura, /**/){
@@ -46,21 +46,21 @@ function gigiuleala(data, temperatura, /**/){
 ```
 ---------
 
-- ``.then`` - Ank ii promite lu' Costel ca il va pupa dupa ce spala vasele 
+- ``.then`` - Ank ii promite lu' Gigel ca il va pupa dupa ce spala vasele 
 ```javascript
-Costel.spalaVase()
+Gigel.spalaVase()
 	.then(() => {
-    	Ank.pupa(Costel);
+    	Ank.pupa(Gigel);
     })
 
 ```
 ---------
 
-- ``.catch`` - reject - dar si costel este si el la randul lui om:
+- ``.catch`` - reject - dar si Gigel este si el la randul lui om:
 
 ```javascript
-Costel.spalaVasele = () => {
-	if(Costel.temperatura > 30) {
+Gigel.spalaVasele = () => {
+	if(Gigel.temperatura > 30) {
     	return Promise.reject({motiv: 'imi este rau'})
     }
     return Promise.resolve()
@@ -70,22 +70,22 @@ Costel.spalaVasele = () => {
 Astfel va refuza sa spele vasele din motive normale, dar Ank nu il crede
 
 ```javascript
-Costel.spalaVase()
+Gigel.spalaVase()
 	.then(() => {
-    	Ank.pupa(Costel);
+    	Ank.pupa(Gigel);
     })
     .catch(() => {
-		Costel.doarmePePres();
+	Gigel.doarmePePres();
     })
 
 ```
 ---------
 
-- ``.catch`` - throw(error) - dar si daca Costel sparge un vas din greseala, Ank va fi la fel de nemiloasa
+- ``.catch`` - throw(error) - dar si daca Gigel sparge un vas din greseala, Ank va fi la fel de nemiloasa
 
 ```javascript
-Costel.spalaVasele = (vase) => {
-	if(Costel.temperatura > 30) {
+Gigel.spalaVasele = (vase) => {
+	if(Gigel.temperatura > 30) {
     	return Promise.reject({motiv: 'imi este rau'})
     }
     
@@ -98,38 +98,38 @@ Costel.spalaVasele = (vase) => {
 }
 ```
 
-din pacate, Costel tot pe pres va dormi
+din pacate, Gigel tot pe pres va dormi
 
 ```javascript
-Costel.spalaVase()
+Gigel.spalaVase()
 	.then(() => {
-    	Ank.pupa(Costel);
+    	Ank.pupa(Gigel);
     })
     .catch(() => {
-		Costel.doarmePePres();
+		Gigel.doarmePePres();
     })
 
 ```
 ---------
 
-- ``.all`` - Ank, la 12 noaptea ii vine pofta de "SOMON LA GRĂTAR CU SALATĂ", astfel il forteaza pe Costel sa se duca la piata sa cumpere rosii, castraveti, salata si somon pentru ai potoli pofele.
+- ``.all`` - Ank, la 12 noaptea ii vine pofta de "SOMON LA GRĂTAR CU SALATĂ", astfel il forteaza pe Gigel sa se duca la piata sa cumpere rosii, castraveti, salata si somon pentru ai potoli pofele.
 
 ```javascript
 Promise.All([
-	Costel.cumpara('somon'),
-	Costel.cumpara('rosii'),
-	Costel.cumpara('castraveti'),
-	Costel.cumpara('salata'),
+	Gigel.cumpara('somon'),
+	Gigel.cumpara('rosii'),
+	Gigel.cumpara('castraveti'),
+	Gigel.cumpara('salata'),
 ])
 .then(([somon, ...legume]) => {
 	return Promise.All([
-   		Costel.pregatesteSalata(legume),
- 	   	Costel.prajeste(somon),
+   		Gigel.pregatesteSalata(legume),
+ 	   	Gigel.prajeste(somon),
     ])
 }).then((mancare) => {
 	Ank.mananca(mancare);
 }).catch((err) => {
-	Costel.doarmePePres();
+	Gigel.doarmePePres();
 })
 
 ```
@@ -139,7 +139,7 @@ Promise.All([
 
 ```javascript
 Promise.race([
-	Costel.mergeAcasa(),
+	Gigel.mergeAcasa(),
 	Ank.mergeAcasa(),
 ])
 .then((primul) => {
@@ -151,14 +151,14 @@ Promise.race([
 - chaining - 
 
 ```javascript
-function costeleVreau(produs){
-	if(costel.bani < produs.pret){
-    	return Florine.imprumutamaCu(produs.pret - costel.bani)
+function GigeleVreau(produs){
+	if(Gigel.bani < produs.pret){
+    	return Florine.imprumutamaCu(produs.pret - Gigel.bani)
         	.catch((err) => {
             	if(err.motiv === 'nu ma lasa iuby'){
                 	Florin.send('te inteleg');
                 }
-            	return Banca.faImprumut(produs.pret - costel.bani)
+            	return Banca.faImprumut(produs.pret - Gigel.bani)
             })
         	.then((imprumut) => {
             	return Magazin.getProdus(imprumut + coste.bani, produs.name)
